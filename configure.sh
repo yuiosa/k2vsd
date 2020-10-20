@@ -15,24 +15,5 @@ install -d /usr/local/etc/v2ray
 envsubst '\$UUID,\$WS_PATH' < $config_path > /usr/local/etc/v2ray/config.json
 # Run V2Ray
 /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json &
-# print config
-echo "V2ray 配置信息"
-echo "地址（address）：$HEROKU_APP_NAME.herokuapp.com"
-echo "端口（port）：443 "
-echo "用户id（UUID）：$UUID"
-if [ "$PROTOCOL" = "vmess" ]
-then
-    echo "额外id（alterId）： 64"
-fi
-echo "加密方式（security）： 自适应"
-echo "传输协议（network）： ws"
-echo "伪装类型（type）： none"
-echo "路径：$WS_PATH"
-echo "底层传输安全： tls "
-if [ "$PROTOCOL" = "vmess" ]
-then
-    vmess_link=$(printf "%s""{\"add\":\"$HEROKU_APP_NAME\","aid":64,"host":\"\",\"id\":\"$UUID\",\"net\":\"ws\",\"path\":\"$WS_PATH\",\"port\":443,\"ps\":\"h1\",\"tls\":\"tls\",\"type\":\"none\",\"v\":2}" | base64)
-echo "vmess客户端地址：vmess://"$vmess_link
-fi
 # Run nginx
 /bin/bash -c "envsubst '\$PORT,\$WS_PATH' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
