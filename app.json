@@ -24,7 +24,7 @@
   "website": "https://github.com/libsgh/v2ray-heroku",
   "repository": "https://github.com/libsgh/v2ray-heroku",
   "stack": "container",
-  "labs": [
+  "features": [
     "runtime-dyno-metadata"
   ]
 }
