@@ -2,9 +2,13 @@ server {
   listen $PORT default_server;
 
   location / {
-    root   /usr/share/nginx/html;
+    root   /usr/share/nginx/html/index;
     index  index.html index.htm;
   }
+  location /speedtest {
+      root   /usr/share/nginx/html/speedtest;
+      index  index.html index.htm;
+    }
   location $WS_PATH {
           proxy_redirect off;
           proxy_pass http://127.0.0.1:23323;
