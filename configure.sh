@@ -1,7 +1,6 @@
 #!/bin/sh
 # V2Ray generate configuration
 # Download and install V2Ray
-env
 config_path=$PROTOCOL"_ws_tls.json"
 mkdir /tmp/v2ray
 curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
