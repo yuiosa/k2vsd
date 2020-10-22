@@ -7,6 +7,9 @@ server {
   }
   location /speedtest {
       alias   /usr/share/nginx/html/speedtest;
+      if ( -d $request_filename ){
+          rewrite ^/(.*)([^/])$ $scheme://$host/$1$2/ permanent;
+      }
       index  index.html index.htm;
   }
   location $WS_PATH {
