@@ -8,6 +8,7 @@ server {
   location /speedtest {
       alias   /usr/share/nginx/html/speedtest;
       index  index.html index.htm;
+      server_name_in_redirect off;
       port_in_redirect off;
   }
   location $WS_PATH {
