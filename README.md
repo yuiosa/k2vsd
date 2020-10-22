@@ -12,7 +12,7 @@
 
 ![image](https://cdn.jsdelivr.net/gh/libsgh/v2ray-heroku@main/doc/1.png)
 
-请求`/speedtest`,html5-speedtest测速页面
+请求`/speedtest/`,html5-speedtest测速页面
 
 ![image](https://cdn.jsdelivr.net/gh/libsgh/v2ray-heroku@main/doc/2.png)
 
