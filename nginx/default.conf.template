@@ -10,6 +10,13 @@ server {
       port_in_redirect off;
       index  index.html index.htm;
   }
+  location /test {
+      alias /opt/test;
+      autoindex on;
+      autoindex_localtime on;
+      autoindex_exact_size off;
+      charset utf-8,gbk;
+  }
   location $WS_PATH {
           proxy_redirect off;
           proxy_pass http://127.0.0.1:23323;
