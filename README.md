@@ -5,7 +5,7 @@
 - [x] 支持vmess和vless两种协议
 - [x] 支持自定义websocket路径
 - [x] 伪装首页（3D元素周期表）
-- [x] HTMl5测速
+- [x] HTML5测速
 - [x] 使用v2ray最新版构建
 
 请求`/`，返回3D元素周期表
@@ -29,7 +29,7 @@
 | ------------ | ------------ | ------------ |
 |  PROTOCOL |  vmess<br>vless（可选） |  协议：nginx+vmess+ws+tls或是nginx+vless+ws+tls |
 |  UUID |  [uuid在线生成器](https://www.uuidgenerator.net "uuid在线生成器") | 用户主ID  |
-|  WS_PATH | 默认为`/ray` |  路径 |
+|  WS_PATH | 默认为`/ray` |  路径，请勿使用`/speedtest`，`/`，`/test` 等已经被占用的请求路径 |
 
 ### 进阶
 heorku可以绑卡（应用一直在线，不扣费），绑定域名，套cf，[uptimerobot](https://uptimerobot.com/) 定时访问防止休眠
